@@ -1,9 +1,11 @@
 import Ember from 'ember';
-import projects from './data';
+
+const apiUrl = 'https://punchstarter-api.herokuapp.com/ryan/basic/projects';
 
 export default Ember.Route.extend({
   // Load data for the current page
   model() {
-    return projects;
+    return fetch(apiUrl)
+      .then(r => r.json());
   }
 });
