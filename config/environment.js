@@ -2,6 +2,8 @@
 
 module.exports = function(environment) {
   var ENV = {
+    apiUrl: 'https://punchstarter-api.herokuapp.com/ryan/basic',
+
     modulePrefix: 'punchstarter',
     environment: environment,
     rootURL: '/',
