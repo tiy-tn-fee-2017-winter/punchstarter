@@ -17,10 +17,10 @@ export default Ember.Controller.extend({
         headers: { 'Content-Type': 'application/json', accept: 'application/json' },
         body: JSON.stringify(this.formValues),
       }).then(r => r.json())
-        .then(() => {
+        .then((project) => {
           // Redirect to index route
-          this.transitionToRoute('index');
-          // this.$router.push({ name: 'index' });
+          this.transitionToRoute('project.detail', project.id);
+          // this.$router.push({ name: 'project.detail', params: { id: project.id } });
         });
     },
   },

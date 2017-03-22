@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar">
       <div class="navbar__group">
-        <h1 class="logo">Punchstarter</h1>
+        <h1 class="logo">{{#link-to "index"}}Punchstarter{{/link-to}}</h1>
       </div>
 
       <div class="navbar__group">
@@ -12,7 +12,7 @@
             {{!-- <router-link :to="{ name: 'about' }">About</router-link> --}}
           </li>
           <li class="nav-list__item">
-            {{#link-to "new-project"}}New Project{{/link-to}}
+            {{#link-to "project.new"}}New Project{{/link-to}}
           </li>
         </ul>
       </div>
