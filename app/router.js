@@ -12,7 +12,9 @@ Router.map(function() {
 
   this.route('project', { path: '/projects' }, function() {
     this.route('new');
-    this.route('detail', { path: '/:id' });
+    this.route('detail', { path: '/:id' }, function() {
+      this.route('new-pledge');
+    });
   });
 });
 
