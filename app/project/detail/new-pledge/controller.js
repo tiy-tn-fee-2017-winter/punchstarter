@@ -12,14 +12,15 @@ export default Ember.Controller.extend({
 
   actions: {
     save() {
-      fetch(`${config.apiUrl}/pledge-levels`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', accept: 'application/json' },
-        body: JSON.stringify({ ...this.formValues, project_id: this.model.id })
-      }).then(r => r.json())
-        .then(() => {
-          this.transitionToRoute('project.detail.index');
-        });
+      const pledgeLevel = this.store.createRecord('pledge-level', this.formValues);
+
+      // this.model is the model from 'project/detail'
+      pledgeLevel.set('project', this.model);
+
+      return pledgeLevel.save().then(() => {
+        this.set('formValues', {});
+        this.transitionToRoute('project.detail.index');
+      });
     },
   },
 });
