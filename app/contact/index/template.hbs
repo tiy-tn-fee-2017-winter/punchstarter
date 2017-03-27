@@ -1,0 +1,12 @@
+{{#link-to "contact.create"}}Add Contact{{/link-to}}
+
+<ul>
+  {{#each model as |contact|}}
+    <li>
+      {{contact.firstName}} {{contact.lastName}}
+
+      <button {{action "deleteContact" contact}}>Delete</button>
+      {{!-- <button @click="deleteContact(contact)">Delete</button> --}}
+    </li>
+  {{/each}}
+</ul>
