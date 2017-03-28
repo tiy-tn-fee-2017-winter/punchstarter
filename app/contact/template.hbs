@@ -1,3 +1,18 @@
-<h2>--CONTACTS--</h2>
+{{#link-to "contact.create"}}Add Contact{{/link-to}}
+
+<ul>
+  {{#each model as |contact|}}
+    <li>
+      {{contact.firstName}} {{contact.lastName}}
+
+      {{!-- {{link-to "Edit" "contact.edit" contact}} --}}
+      {{#link-to "contact.edit" contact}}Edit{{/link-to}}
+
+
+      <button {{action "deleteContact" contact}}>Delete</button>
+      {{!-- <button @click="deleteContact(contact)">Delete</button> --}}
+    </li>
+  {{/each}}
+</ul>
 
 {{outlet}}
