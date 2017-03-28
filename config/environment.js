@@ -5,7 +5,7 @@ module.exports = function(environment) {
     apiUrl: 'https://punchstarter-api.herokuapp.com/ryan/basic',
 
     DS: {
-      host: 'https://punchstarter-api.herokuapp.com',
+      host: 'http://localhost:3333',
       namespace: 'ryan',
     },
 
@@ -50,7 +50,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://punchstarter-api.herokuapp.com';
   }
 
   return ENV;
