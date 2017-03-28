@@ -1,7 +1,12 @@
-<form>
-  {{input value=model.firstName}}
+{{#with (changeset model) as |formValues|}}
+  <h2>Editing {{model.firstName}} {{model.lastName}}</h2>
 
-  {{#link-to "contact.index"}}Back{{/link-to}}
+  <form {{action "saveContact" formValues on="submit"}}>
+  {{!--<form @submit.prevent="saveContact(formValues)">--}}
+    {{input value=formValues.firstName}}
 
-  <button>Save</button>
-</form>
+    {{#link-to "contact.index"}}Back{{/link-to}}
+
+    <button type="submit">Save</button>
+  </form>
+{{/with}}
