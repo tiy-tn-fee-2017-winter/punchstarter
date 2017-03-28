@@ -1,4 +1,4 @@
-{{#with (changeset model) as |formValues|}}
+{{#with (changeset model contactValidation) as |formValues|}}
   <h2>Editing {{model.firstName}} {{model.lastName}}</h2>
 
   <form {{action "saveContact" formValues on="submit"}}>
