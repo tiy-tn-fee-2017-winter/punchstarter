@@ -18,7 +18,10 @@ Router.map(function() {
   });
   this.route('contact', function() {
     this.route('create');
-    this.route('edit');
+
+    this.route('edit', {
+      path: '/:contact_id/edit'
+    });
   });
 });
 
