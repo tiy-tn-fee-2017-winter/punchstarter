@@ -23,6 +23,7 @@ Router.map(function() {
       path: '/:contact_id/edit'
     });
   });
+  this.route('register');
 });
 
 export default Router;
