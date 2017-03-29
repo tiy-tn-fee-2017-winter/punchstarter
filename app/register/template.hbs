@@ -1,1 +1,12 @@
-{{outlet}}
+{{#with (changeset model) as |formValues|}}
+  <form>
+    {{form-input label="Email" changeset=formValues property="email"}}
+    {{form-input label="Username" changeset=formValues property="username"}}
+    {{form-input label="First Name" changeset=formValues property="firstName"}}
+    {{form-input label="Last Name" changeset=formValues property="lastName"}}
+
+    {{form-input type="password" label="Password" changeset=formValues property="password"}}
+
+    <button>Register</button>
+  </form>
+{{/with}}
