@@ -1,5 +1,5 @@
 {{#with (changeset model) as |formValues|}}
-  <form>
+  <form {{action "saveUser" formValues on="submit"}}>
     {{form-input label="Email" changeset=formValues property="email"}}
     {{form-input label="Username" changeset=formValues property="username"}}
     {{form-input label="First Name" changeset=formValues property="firstName"}}
